@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Naadir's Automation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-shell">
+      <div class="hero">
+        <div class="hero-copy">
+          <h1>Naadir's</h1>
+          <p class="hero-title">Browser Automation Extension</p>
+        </div>
+        <img
+          class="hero-logo"
+          src="icon/browser-automation-logo.png"
+          alt="Browser Automation Extension logo"
+        >
+      </div>
+
+      <div class="button-row">
+        <button id="record">Start Recording</button>
+        <button id="stop">Stop Recording</button>
+        <button id="play">Replay Selected</button>
+      </div>
+
+      <div class="loop-bar">
+        <label class="loop-toggle">
+          <input type="checkbox" id="loopEnabled">
+          <span>Loop</span>
+        </label>
+        <div class="tooltip-wrap">
+          <button id="loopInfo" class="icon-button" type="button" aria-label="Loop help">i</button>
+          <div class="tooltip">
+            Enable loop replay to run the selected automation repeatedly. Delay is the wait time in milliseconds after one run finishes before the next run starts. Count is how many times to run; leave it blank for infinite looping. Use Stop Loop to cancel an active loop.
+          </div>
+        </div>
+        <input id="loopDelay" class="loop-input" type="number" min="0" placeholder="Delay ms">
+        <input id="loopCount" class="loop-input" type="number" min="1" placeholder="Count">
+        <button id="stopLoop" class="secondary-button" type="button">Stop Loop</button>
+      </div>
+    </header>
+
+    <main class="middle-scroll">
+      <section class="panel">
+        <h2>Current Recording</h2>
+        <div id="currentRecording" class="empty-state">No recording in progress.</div>
+        <ul id="steps" class="step-list"></ul>
+      </section>
+
+      <details class="panel log-panel" open>
+        <summary>
+          <span>Detection Log</span>
+          <span id="logCount" class="log-count">0 items</span>
+        </summary>
+        <p class="log-help">Shows the HTML elements the recorder is detecting, with a compact visual view.</p>
+        <ul id="logs" class="log-list"></ul>
+      </details>
+    </main>
+
+    <section class="panel bottom-shell">
+      <div class="panel-header">
+        <h2>Saved Automations</h2>
+        <div class="button-row compact">
+          <button id="delete">Delete</button>
+          <button id="export">Export JSON</button>
+          <label for="importFile" class="file-label">Import JSON</label>
+          <input type="file" id="importFile" accept="application/json">
+        </div>
+      </div>
+      <ul id="automations" class="automation-list"></ul>
+      <p class="disclaimer">
+        This is an experimental project for developmental purposes and is a personal project. Use with caution. No responsibility or liability is accepted for damage caused by using this tool.
+      </p>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "section": "browserextensions",
+  "category": "tools",
+  "n": 1,
+  "title": "Browser Automation",
+  "img": "browserAutomationExtension.webp",
+  "desc": "Browser Automation Extension is a Chromium based side panel automation tool that records browser actions like clicks, typing, and navigation, then replays them as reusable automations. It also lets users edit, loop, import, and export recorded workflows directly from browser storage.",
+  "tags": [
+    "Browser Extensions",
+    "Chromium",
+    "Javascript",
+    "HTML",
+    "CSS"
+  ]
+}
