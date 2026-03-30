@@ -23,7 +23,7 @@
 
 ## Overview
 
-Browser Automation Extension is a Chrome extension that records browser actions, stores them locally, and replays them through a dark-themed side panel UI. It is designed for users who want lightweight workflow automation without depending on external services or a separate desktop app.
+Browser Automation Extension is a Chromium extension that works on Microsoft edge and Google Chrome that records browser actions, stores them locally, and replays them through a theme panel. This is a custom built automation recorder and will allow you to record entire browser seshions. It is designed for users who want lightweight workflow automation without depending on external services or a separate desktop app.
 
 The project focuses on practical browser task repetition: capturing clicks, typing, manual URL navigation, and saved automation flows that can be replayed, edited inline, looped, exported, and imported as JSON. It exists to make browser-based routines faster to repeat and easier to inspect.
 
