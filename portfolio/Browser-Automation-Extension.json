@@ -1,6 +1,6 @@
 {
   "section": "browserextensions",
-  "category": "tools",
+  "category": "chromium",
   "n": 1,
   "title": "Browser Automation",
   "img": "browserAutomationExtension.webp",
