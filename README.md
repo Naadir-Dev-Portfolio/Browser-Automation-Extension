@@ -1,137 +1,44 @@
-<div align="center">
+# AI-Article-Sender
 
-<img src="./repo-card.png" alt="Browser Automation Extension project card" width="100%" />
-<br /><br />
+> Chrome extension that scrapes any article and sends the full text directly to ChatGPT, Claude, Gemini, or Perplexity.
 
-<p><strong>Record, edit, and replay browser workflows from a side panel without leaving the page.</strong></p>
+![AI-Article-Sender](repo-card.png)
 
-<p>Built for testers, operators, and solo builders who need repeatable browser actions without writing custom automation code.</p>
-
-<p>
-  <a href="#overview">Overview</a> |
-  <a href="#feature-highlights">Feature Highlights</a> |
-  <a href="#screenshots">Screenshots</a> |
-  <a href="#quick-start">Quick Start</a> |
-  <a href="#architecture--data">Architecture & Data</a>
-</p>
-
-<h3><strong>Made by Naadir | March 2026</strong></h3>
-
-</div>
+Built by [Naadir](https://github.com/Naadir-Dev-Portfolio)
 
 ---
 
 ## Overview
 
-Browser Automation Extension is a Chromium extension that works on Microsoft edge and Google Chrome that records browser actions, stores them locally, and replays them through a theme panel. This is a custom built automation recorder and will allow you to record entire browser seshions. It is designed for users who want lightweight workflow automation without depending on external services or a separate desktop app.
+Reading something interesting and want an AI take on it? One click in the side panel scrapes the full article text from the current tab and injects it straight into whichever AI platform you choose — no copy-pasting, no truncation worries. Scraped articles are saved locally so you can re-send or revisit them later without hitting the page again.
 
-The project focuses on practical browser task repetition: capturing clicks, typing, manual URL navigation, and saved automation flows that can be replayed, edited inline, looped, exported, and imported as JSON. It exists to make browser-based routines faster to repeat and easier to inspect.
+---
 
-## What Problem It Solves
+## Features
 
-- Repeating the same browser workflow by hand is slow and inconsistent
-- Browser automation usually requires code, external tooling, or fragile one-off scripts
-- Reviewing what was recorded and understanding why replay failed is usually unclear
-- Users can now capture, store, edit, replay, and compare browser action sequences from one interface
+- Scrapes article body text from any webpage via an injected content script
+- Sends up to 20,000 characters directly into ChatGPT, Claude, Gemini, or Perplexity
+- Side-panel UI with per-entry expand/collapse and a persistent article library
+- Deduplicates by URL — re-scraping a page updates the existing entry rather than creating a duplicate
+- Auto-injects the content script on-demand if the extension was loaded after the tab opened
+- Works on any URL including pages opened before the extension was installed
 
-### At a glance
-
-| Track | Analyze | Compare |
-|---|---|---|
-| recorded clicks, inputs, navigations, and saved automations | step timing, selector strategies, and replay success or failure | multiple saved automation runs and imported/exported workflow JSON |
-
-## Feature Highlights
-
-- Records clicks, text input, and manual address-bar navigation into reusable browser automations
-- Replays saved automations from the original start page with step highlighting, success states, and failure states
-- Stores automations in browser local storage and supports JSON import/export for portability
-- Uses multi-strategy element targeting with CSS, ID, data attributes, aria-label, text matching, and XPath fallback
-- Includes inline step editing, looped replay controls, detection logs, and a persistent side-panel UI
-
-### Core capabilities
-
-| Area | What it gives you |
-|---|---|
-| **Recording** | Captures browser interactions in sequence, including the starting page, recorded delays, and manual URL changes |
-| **Replay Engine** | Interprets action steps, waits for pages and elements, retries lookups, and reports replay progress per step |
-| **Automation Library** | Lets you review, edit, delete, import, export, and reuse saved automations directly from browser storage |
-
-## Screenshots
-
-<details>
-<summary><strong>Open screenshot gallery</strong></summary>
-
-<br />
-
-<div align="center">
-  <img src="./screenshots/screenshot.png" alt="Screenshot 1" width="88%" />
-  <br /><br />
-  <img src="./screenshots/screenshot2.png" alt="Screenshot 2" width="88%" />
-</div>
-
-</details>
-
-## Quick Start
-
-```bash
-# install dependencies
-# no package install required; this is a vanilla Chrome extension
-
-# run the project
-# open chrome://extensions, enable Developer mode, then Load unpacked -> Browser-Automation-Extension
-```
-
-Add the shortest possible path to getting the project running.
-
-Mention required API keys, environment variables, or first-launch setup here.
-No API keys or environment variables are required. After loading the unpacked extension, click the toolbar icon to open the side panel.
+---
 
 ## Tech Stack
 
-<details>
-<summary><strong>Open tech stack</strong></summary>
+`JavaScript` · `HTML` · `CSS` · `Chrome Extensions API (Manifest V3)`
 
-<br />
+---
 
-| Category | Tools |
-|---|---|
-| **Language** | JavaScript, HTML, CSS |
-| **UI / Framework** | Vanilla browser extension UI / Chrome Side Panel |
-| **Data / Storage** | Chrome Extension Local Storage |
-| **Charts** | None |
-| **External Services** | None |
+## Setup
 
-</details>
+1. Clone or download this repo
+2. Open Chrome and go to `chrome://extensions/`
+3. Enable **Developer mode** (top-right toggle)
+4. Click **Load unpacked** and select this folder
+5. Pin the extension and open the side panel from any article page
 
-## Architecture & Data
+---
 
-<details>
-<summary><strong>Open architecture and data details</strong></summary>
-
-<br />
-
-### Database schema
-
-| Table | Key columns |
-|---|---|
-| `chrome.storage.local (automations/currentRecording)` | `id`, `name`, `startUrl`, `startTitle`, `steps[]`, `updatedAt` |
-
-### Data / system notes
-
-The extension stores all recordings locally in `chrome.storage.local`; there is no remote sync layer. Replay uses a step interpreter with wait-for-page, wait-for-element, retry, and timeout handling, and recorded steps include multiple locator strategies to improve reliability across page changes.
-
-### Project structure
-
-```text
-Browser-Automation-Extension/
-|-- README.md
-|-- repo-card.png
-|-- manifest.json
-`-- icon/, portfolio/
-```
-
-</details>
-
-## Contact
-
-Questions, feedback, or collaboration: `naadir.dev.mail@gmail.com`
+<sub>JavaScript · HTML · CSS</sub>
