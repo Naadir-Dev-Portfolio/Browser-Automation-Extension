@@ -4,6 +4,7 @@
   "n": 1,
   "title": "Browser Automation",
   "img": "browser-automation-extension.png",
+  "imgFeatured": "browser-automation-extension-featured.png",
   "desc": "Browser Automation Extension is a Chromium based side panel automation tool that records browser actions like clicks, typing, and navigation, then replays them as reusable automations. It also lets users edit, loop, import, and export recorded workflows directly from browser storage.",
   "code": "https://github.com/Naadir-Dev-Portfolio/Browser-Automation-Extension/blob/main/background.js",
   "details": "https://github.com/Naadir-Dev-Portfolio/Browser-Automation-Extension/blob/main/README.md",
